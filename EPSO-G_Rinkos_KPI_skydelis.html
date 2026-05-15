@@ -271,12 +271,12 @@
           <circle id="gaugeDot" r="5.5" fill="#fff"/>
         </svg>
         <div class="gauge-label">
-          <div class="gauge-num mono" id="climateNum">–</div>
+          <div class="gauge-num mono" id="climateNum">-</div>
           <div class="gauge-cap">Rinkos klimatas</div>
         </div>
       </div>
       <div class="climate-txt">
-        <b id="climateWord">–</b><br/>
+        <b id="climateWord">-</b><br/>
         <span id="climateDesc">Skaičiuojama…</span>
       </div>
     </div>
@@ -298,7 +298,7 @@
     <div class="ai-card">
       <div class="ai-head">
         <span class="ai-badge">⚡ AI tendencijų santrauka</span>
-        <span class="when">Sugeneruota automatiškai pagal naujausius duomenis · <span id="updatedWhen">–</span></span>
+        <span class="when">Sugeneruota automatiškai pagal naujausius duomenis · <span id="updatedWhen">-</span></span>
       </div>
       <div class="ai-body">
         <div id="aiText"><!-- generated --></div>
@@ -314,7 +314,7 @@
   <section id="groupA">
     <div class="sec-head">
       <span class="tag">A lygmuo</span>
-      <h2>„Kainos“ KPI — kas brangina pirkinius</h2>
+      <h2>„Kainos“ KPI - kas brangina pirkinius</h2>
       <p>Žaliavų ir energijos rodikliai, tiesiogiai veikiantys sutarčių vertę ir indeksavimo poreikį.</p>
     </div>
     <div class="grid g3" id="gridA"></div>
@@ -324,7 +324,7 @@
   <section id="groupB">
     <div class="sec-head">
       <span class="tag">B lygmuo</span>
-      <h2>„Lead time / pajėgumai“ KPI — kas ilgina terminus</h2>
+      <h2>„Lead time / pajėgumai“ KPI - kas ilgina terminus</h2>
       <p>Logistikos ir pervežimų pajėgumų rodikliai, veikiantys pristatymo terminus ir grafikų riziką.</p>
     </div>
     <div class="grid g3" id="gridB"></div>
@@ -334,10 +334,20 @@
   <section id="groupC">
     <div class="sec-head">
       <span class="tag">C lygmuo</span>
-      <h2>„Tiekimo nutrūkimo rizika“ KPI — kas gali sustabdyti grandinę</h2>
+      <h2>„Tiekimo nutrūkimo rizika“ KPI - kas gali sustabdyti grandinę</h2>
       <p>Geopolitiniai ir atitikties signalai, galintys staiga nutraukti tiekimo grandinę.</p>
     </div>
     <div class="grid g2" id="gridC"></div>
+  </section>
+
+  <!-- GROUP D -->
+  <section id="groupD">
+    <div class="sec-head">
+      <span class="tag">D lygmuo</span>
+      <h2>LT indeksavimo rodikliai (VDA) - prie ko rišamos sutartys</h2>
+      <p>Valstybės duomenų agentūros skelbiami statistiniai indeksai. Tai teisinis inkaras sutarčių kainų peržiūrai Lietuvoje. Vertinamas metinis (12 mėn.) pokytis.</p>
+    </div>
+    <div class="grid g3" id="gridD"></div>
   </section>
 
   <!-- CATEGORY MAP -->
@@ -355,16 +365,16 @@
     <div class="sec-head">
       <span class="tag">Metodika</span>
       <h2>Triggerių ir sutartinių veiksmų lentelė</h2>
-      <p>Ribinės reikšmės (4 sav. pokytis arba lygis) ir bazinis sutartinis veiksmas kiekvienam režimui.</p>
+      <p>Ribinės reikšmės (globaliems A/B/C rodikliams - 4 sav. pokytis arba lygis; LT/VDA rodikliams - 12 mėn. pokytis) ir bazinis sutartinis veiksmas kiekvienam režimui.</p>
     </div>
     <div class="tbl-wrap">
       <table>
         <thead>
           <tr>
             <th style="width:210px">Rodiklis (PRR kandidatas)</th>
-            <th>🟢 Žalia — bazinis veiksmas</th>
-            <th>🟡 Geltona — bazinis veiksmas</th>
-            <th>🔴 Raudona — bazinis veiksmas</th>
+            <th>🟢 Žalia - bazinis veiksmas</th>
+            <th>🟡 Geltona - bazinis veiksmas</th>
+            <th>🔴 Raudona - bazinis veiksmas</th>
           </tr>
         </thead>
         <tbody id="trigBody"></tbody>
@@ -381,19 +391,19 @@
     <div class="help">
       <div>
         <h4>Spalvų logika (šviesoforas)</h4>
-        <div class="leg"><span class="sq" style="background:var(--green)"></span> <b style="color:var(--green)">Žalia</b> — pokytis bazinis, veikiame įprastai.</div>
-        <div class="leg"><span class="sq" style="background:var(--yellow)"></span> <b style="color:var(--yellow)">Geltona</b> — kyla spaudimas, ruošiame apsaugas sutartyse.</div>
-        <div class="leg"><span class="sq" style="background:var(--red)"></span> <b style="color:var(--red)">Raudona</b> — reikšmingas pokytis, aktyvuojame priemones ir PRR eskalaciją.</div>
+        <div class="leg"><span class="sq" style="background:var(--green)"></span> <b style="color:var(--green)">Žalia</b> - pokytis bazinis, veikiame įprastai.</div>
+        <div class="leg"><span class="sq" style="background:var(--yellow)"></span> <b style="color:var(--yellow)">Geltona</b> - kyla spaudimas, ruošiame apsaugas sutartyse.</div>
+        <div class="leg"><span class="sq" style="background:var(--red)"></span> <b style="color:var(--red)">Raudona</b> - reikšmingas pokytis, aktyvuojame priemones ir PRR eskalaciją.</div>
       </div>
       <div>
         <h4>Ką rodo skaičiai</h4>
-        <p>Didelis skaičius kortelėje — naujausia rodiklio reikšmė. Šalia — <b>pokytis per 4 savaites</b>: raudonai, kai pokytis nepalankus pirkimams (brangsta / lėtėja / didėja rizika), žaliai — kai palankus.</p>
-        <p>Mažas grafikas rodo 12 sav. tendenciją.</p>
+        <p>Didelis skaičius kortelėje - naujausia rodiklio reikšmė. Šalia - <b>pokytis</b>: globaliems A/B/C rodikliams per 4 savaites, LT/VDA rodikliams per 12 mėnesių. Raudonai, kai pokytis nepalankus pirkimams (brangsta / lėtėja / didėja rizika), žaliai - kai palankus.</p>
+        <p>Mažas grafikas rodo tendenciją (A/B/C - 12 savaičių, LT/VDA - 13 mėnesių).</p>
       </div>
       <div>
         <h4>Ryšys su Litgrid PRR</h4>
-        <p>Kiekvienas rodiklis yra parengtas kaip <b>pagrindinio rizikos rodiklio (PRR)</b> kandidatas mėnesiniam „Rizikų registro“ pildymui — pvz., „Brent volatilumas“, „BDI 4 sav. pokytis“, „LME Al 4 sav. pokytis“, „Hormūzo tranzito indeksas“.</p>
-        <p>Skydelį galima atnaujinti rankiniu būdu (mygtukas „Redaguoti duomenis“) — kas savaitę ar prieš mėnesinį rizikų pildymą.</p>
+        <p>Kiekvienas rodiklis yra parengtas kaip <b>pagrindinio rizikos rodiklio (PRR)</b> kandidatas mėnesiniam „Rizikų registro“ pildymui - pvz., „Brent volatilumas“, „BDI 4 sav. pokytis“, „LME Al 4 sav. pokytis“, „Hormūzo tranzito indeksas“.</p>
+        <p>Skydelį galima atnaujinti rankiniu būdu (mygtukas „Redaguoti duomenis“) - kas savaitę ar prieš mėnesinį rizikų pildymą.</p>
       </div>
     </div>
   </section>
@@ -401,9 +411,9 @@
   <footer>
     <div class="src" id="srcList"></div>
     <div class="disc">
-      <b>Apie šį įrankį.</b> Skydelis skirtas pirkimų iniciatoriams, organizatoriams ir dalyviams EPSO-G įmonių grupėje — kad per kelias sekundes būtų suprantami globalūs rinkos pokyčiai, svarbūs viešiesiems pirkimams ir sutarčių indeksavimui.
+      <b>Apie šį įrankį.</b> Skydelis skirtas pirkimų iniciatoriams, organizatoriams ir dalyviams EPSO-G įmonių grupėje - kad per kelias sekundes būtų suprantami globalūs rinkos pokyčiai, svarbūs viešiesiems pirkimams ir sutarčių indeksavimui.
       Pateiktos reikšmės yra <b>iliustracinės / pradinės</b> ir skirtos demonstruoti veikiančią KPI logiką; prieš naudojimą sprendimams jas reikia atnaujinti faktinėmis rinkos reikšmėmis (mygtukas „Redaguoti duomenis“ arba „Įkelti“ JSON).
-      Triggerių ribos ir sutartiniai veiksmai yra rekomendacinio pobūdžio — galutinis sprendimas priimamas pagal konkrečios procedūros teisinį vertinimą (PSĮ) ir Litgrid rizikų valdymo tvarką.
+      Triggerių ribos ir sutartiniai veiksmai yra rekomendacinio pobūdžio - galutinis sprendimas priimamas pagal konkrečios procedūros teisinį vertinimą (PSĮ) ir Litgrid rizikų valdymo tvarką.
       Įrankis veikia visiškai lokaliai (vienas .html failas, be interneto), redaguoti duomenys išsaugomi naršyklėje.
     </div>
   </footer>
@@ -416,7 +426,7 @@
 /* =========================================================================
    DUOMENŲ MODELIS
    Kiekvienas rodiklis: 12 sav. eilutė + triggerių ribos + poveikio tekstai.
-   Viskas perskaičiuojama iš šio objekto — redagavimas yra „tikras“.
+   Viskas perskaičiuojama iš šio objekto - redagavimas yra „tikras“.
    ========================================================================= */
 const DEFAULT_DATA = {
   meta:{ updated:"2026-05-15" },
@@ -425,12 +435,12 @@ const DEFAULT_DATA = {
     {
       id:"brent", group:"A",
       name:"Brent nafta",
-      plain:"Pasaulinė naftos kaina — varo degalų, bitumo, plastikų ir logistikos sąnaudas.",
+      plain:"Pasaulinė naftos kaina - varo degalų, bitumo, plastikų ir logistikos sąnaudas.",
       unit:"$/bbl", decimals:1, type:"change",
       invert:false, thr:{yellow:5, red:12},
       series:[74,75,76,75,77,78,79,80,81,82,84,85],
       src:{name:"ICE Brent", url:"https://www.ice.com/brent-crude"},
-      impact:"brangsta degalai, bitumas ir petrochemija — spaudimas statybos ir logistikos sutartims",
+      impact:"brangsta degalai, bitumas ir petrochemija - spaudimas statybos ir logistikos sutartims",
       act:{green:"Fiksuota kaina priimtina; standartinė procedūra.",
            yellow:"Į sutartį įtraukti degalų/energijos indeksavimo sąlygą; trumpinti pasiūlymų galiojimą.",
            red:"Aktyvuoti kainos peržiūros sąlygą; svarstyti ankstesnį pirkimą ir žaliavų rezervavimą."}
@@ -438,25 +448,25 @@ const DEFAULT_DATA = {
     {
       id:"wti", group:"A",
       name:"WTI nafta",
-      plain:"JAV etaloninė naftos kaina — patvirtina Brent tendenciją ir energijos kryptį.",
+      plain:"JAV etaloninė naftos kaina - patvirtina Brent tendenciją ir energijos kryptį.",
       unit:"$/bbl", decimals:1, type:"change",
       invert:false, thr:{yellow:5, red:12},
       series:[70,71,72,71,73,74,75,76,77,78,80,81],
       src:{name:"EIA / ICE", url:"https://www.eia.gov/petroleum/"},
-      impact:"patvirtina energijos sąnaudų kryptį — antrinis spaudimas visoms CAPEX kategorijoms",
+      impact:"patvirtina energijos sąnaudų kryptį - antrinis spaudimas visoms CAPEX kategorijoms",
       act:{green:"Stebėti kartu su Brent; veiksmų nereikia.",
            yellow:"Naudoti kaip patvirtinantį signalą indeksavimo sąlygoms.",
-           red:"Sustiprina Brent signalą — taikyti tas pačias raudonojo režimo priemones."}
+           red:"Sustiprina Brent signalą - taikyti tas pačias raudonojo režimo priemones."}
     },
     {
       id:"lme_al", group:"A",
       name:"LME aliuminis",
-      plain:"Aliuminio biržos kaina — laidai, konstrukcijos, korpusai, pastočių įranga.",
+      plain:"Aliuminio biržos kaina - laidai, konstrukcijos, korpusai, pastočių įranga.",
       unit:"$/t", decimals:0, type:"change",
       invert:false, thr:{yellow:5, red:12},
       series:[2400,2420,2450,2480,2520,2560,2600,2620,2700,2780,2880,2980],
       src:{name:"LME Official Prices", url:"https://www.lme.com/Market-data/LME-reference-prices/LME-Official-Price"},
-      impact:"brangsta laidai, AKĮ konstrukcijos ir pastočių komponentai — tiesioginis poveikis CAPEX",
+      impact:"brangsta laidai, AKĮ konstrukcijos ir pastočių komponentai - tiesioginis poveikis CAPEX",
       act:{green:"Fiksuota kaina priimtina.",
            yellow:"Įtraukti metalų indeksavimo formulę; prašyti kainos išskaidymo (žaliava/darbas).",
            red:"Metalų indeksavimas privalomas; skaidyti į pirkimo dalis; preliminarios sutartys su keliais tiekėjais."}
@@ -464,12 +474,12 @@ const DEFAULT_DATA = {
     {
       id:"lme_cu", group:"A",
       name:"LME varis",
-      plain:"Vario biržos kaina — kabelių, apvijų, transformatorių pagrindinė žaliava.",
+      plain:"Vario biržos kaina - kabelių, apvijų, transformatorių pagrindinė žaliava.",
       unit:"$/t", decimals:0, type:"change",
       invert:false, thr:{yellow:5, red:12},
       series:[9200,9250,9300,9280,9350,9400,9450,9500,9600,9700,9850,10050],
       src:{name:"LME Official Prices", url:"https://www.lme.com/Market-data/LME-reference-prices/LME-Official-Price"},
-      impact:"varis = didžiausia kabelių ir transformatorių sąnaudų dalis — stipriausias kainos draiveris šiose kategorijose",
+      impact:"varis = didžiausia kabelių ir transformatorių sąnaudų dalis - stipriausias kainos draiveris šiose kategorijose",
       act:{green:"Fiksuota kaina priimtina.",
            yellow:"Privaloma vario indeksavimo sąlyga kabelių/transformatorių pirkimuose.",
            red:"Vario indeksavimas + kainos peržiūros mechanizmas; ankstesnis pirkimas; dvigubas tiekimas (dual sourcing)."}
@@ -477,12 +487,12 @@ const DEFAULT_DATA = {
     {
       id:"polymers", group:"A",
       name:"Polimerai (HDPE/PP/PET)",
-      plain:"Plastikų kaina — kabelių izoliacija, vamzdžiai, apsaugos, IT komponentai.",
+      plain:"Plastikų kaina - kabelių izoliacija, vamzdžiai, apsaugos, IT komponentai.",
       unit:"€/t", decimals:0, type:"change",
       invert:false, thr:{yellow:6, red:14},
       series:[1280,1275,1270,1265,1260,1255,1250,1248,1245,1240,1238,1235],
       src:{name:"S&P Global Polymers", url:"https://www.spglobal.com/energy/en/commodity/chemicals/polymers"},
-      impact:"veikia kabelių izoliaciją, vamzdžius ir IT korpusus; krytis žemyn — palanku pirkimams",
+      impact:"veikia kabelių izoliaciją, vamzdžius ir IT korpusus; krytis žemyn - palanku pirkimams",
       act:{green:"Fiksuota kaina priimtina; geras momentas ilgesnėms sutartims.",
            yellow:"Stebėti kartu su Brent (polimerai seka naftą su atsilikimu).",
            red:"Įtraukti žaliavų indeksavimą plastikų gausioms sutartims."}
@@ -491,7 +501,7 @@ const DEFAULT_DATA = {
     {
       id:"bdi", group:"B",
       name:"Baltic Dry Index",
-      plain:"Sausakrūvių jūrų pervežimų kainos indeksas — biriųjų ir stambių krovinių logistika.",
+      plain:"Sausakrūvių jūrų pervežimų kainos indeksas - biriųjų ir stambių krovinių logistika.",
       unit:"taškai", decimals:0, type:"change",
       invert:false, thr:{yellow:12, red:25},
       series:[1450,1480,1520,1500,1550,1600,1620,1650,1780,1950,2150,2320],
@@ -504,12 +514,12 @@ const DEFAULT_DATA = {
     {
       id:"container", group:"B",
       name:"Konteinerių frachtas",
-      plain:"Konteinerinių pervežimų kaina (Drewry WCI) — IT, įrangos, smulkesnių krovinių logistika.",
+      plain:"Konteinerinių pervežimų kaina (Drewry WCI) - IT, įrangos, smulkesnių krovinių logistika.",
       unit:"$/40ft", decimals:0, type:"change",
       invert:false, thr:{yellow:8, red:18},
       series:[2600,2620,2650,2680,2700,2750,2780,2820,2900,2950,3000,3050],
       src:{name:"Drewry WCI", url:"https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry"},
-      impact:"brangsta importuojamos įrangos ir komponentų pristatymas — poveikis IT ir atsarginių dalių kategorijoms",
+      impact:"brangsta importuojamos įrangos ir komponentų pristatymas - poveikis IT ir atsarginių dalių kategorijoms",
       act:{green:"Standartiniai pristatymo terminai.",
            yellow:"Numatyti pristatymo kainos buferį; tikrinti tiekėjų maršrutus.",
            red:"Ilginti terminus; svarstyti regioninius (ES) tiekėjus; didinti saugos atsargas."}
@@ -517,12 +527,12 @@ const DEFAULT_DATA = {
     {
       id:"aircargo", group:"B",
       name:"Oro krovinių indeksas (TAC)",
-      plain:"Oro pervežimų kaina/pajėgumai — kritinės dalys ir skubūs „incidentų“ pristatymai.",
+      plain:"Oro pervežimų kaina/pajėgumai - kritinės dalys ir skubūs „incidentų“ pristatymai.",
       unit:"$/kg", decimals:2, type:"change",
       invert:false, thr:{yellow:6, red:16},
       series:[2.30,2.32,2.35,2.34,2.38,2.40,2.42,2.45,2.50,2.55,2.60,2.62],
       src:{name:"TAC Index", url:"https://www.tacindex.com/"},
-      impact:"brangsta skubūs pristatymai — rizika kritinėms dalims ir avarinėms atsargoms (OPEX/maintenance)",
+      impact:"brangsta skubūs pristatymai - rizika kritinėms dalims ir avarinėms atsargoms (OPEX/maintenance)",
       act:{green:"Skubūs pristatymai įprasta kaina.",
            yellow:"Peržiūrėti kritinių dalių saugos atsargas; sutartyse numatyti skubaus pristatymo sąlygas.",
            red:"Didinti saugos atsargas kritinėms dalims; rezervuoti pajėgumus; numatyti alternatyvius tiekėjus."}
@@ -536,7 +546,7 @@ const DEFAULT_DATA = {
       invert:true, thr:{yellow:6, red:12},
       series:[100,99,100,98,97,96,94,92,89,85,82,79],
       src:{name:"WTO Strait of Hormuz Tracker", url:"https://datalab.wto.org/Strait-of-Hormuz-Trade-Tracker"},
-      impact:"blogėjantys srautai = „antrinė banga“ per petrochemiją, draudimo ir frachto priemokas — net neperkant tiesiogiai iš regiono",
+      impact:"blogėjantys srautai = „antrinė banga“ per petrochemiją, draudimo ir frachto priemokas - net neperkant tiesiogiai iš regiono",
       act:{green:"Veiksmų nereikia; stebėti.",
            yellow:"Žemėlapis: kurios sutartys priklauso nuo petrochemijos/jūrų maršrutų; ruošti planą B.",
            red:"Ruoštis antrinei kainų bangai; alternatyvūs maršrutai/tiekėjai; eskaluoti į PRR ir krizių valdymą."}
@@ -551,8 +561,100 @@ const DEFAULT_DATA = {
       src:{name:"ES sankcijų sąrašas / OFAC", url:"https://www.sanctionsmap.eu/"},
       impact:"daugėja atitikties patikrų; rizika, kad tiekėjas ar komponentas pateks į ribojimų sąrašą sutarties metu",
       act:{green:"Standartinė tiekėjų patikra.",
-           yellow:"Stiprinti tiekėjų ir kilmės šalių patikrą; sutartyse — atitikties ir nutraukimo sąlygos.",
-           red:"Privaloma išplėstinė due diligence; sutartyse — sankcijų sąlyga ir teisė nutraukti be sankcijų; eskaluoti į PRR."}
+           yellow:"Stiprinti tiekėjų ir kilmės šalių patikrą; sutartyse - atitikties ir nutraukimo sąlygos.",
+           red:"Privaloma išplėstinė due diligence; sutartyse - sankcijų sąlyga ir teisė nutraukti be sankcijų; eskaluoti į PRR."}
+    },
+    /* ---------- D: LT INDEKSAVIMO RODIKLIAI (VDA) ---------- */
+    {
+      id:"sski", group:"D",
+      name:"SSKI (bendras)",
+      plain:"Statybos sąnaudų elementų kainų indeksas. Kritinis Litgrid linijų ir pastočių rangos sutartims.",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:3, red:8},
+      series:[124.0,124.4,124.9,125.3,125.8,126.2,126.7,127.1,127.6,128.1,128.5,128.9,129.2],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"auga rangos sutarčių indeksavimo poreikis Litgrid linijų ir pastočių projektuose",
+      act:{green:"Standartinė rangos procedūra; indeksavimo sąlyga gali būti su aukštesne riba.",
+           yellow:"Rangos sutartyse numatyti SSKI indeksavimą; tikslinti, kurią dedamąją indeksuoti.",
+           red:"Privalomas SSKI dedamųjų indeksavimas; peržiūrėti vykdomų sutarčių kainų peržiūros sąlygas."}
+    },
+    {
+      id:"sski_med", group:"D",
+      name:"SSKI: statybinės medžiagos",
+      plain:"SSKI dedamoji: statybinių medžiagų ir gaminių kainos (betonas, metalo konstrukcijos).",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:3, red:7},
+      series:[118.0,118.1,118.3,118.5,118.7,119.0,119.2,119.5,119.7,119.9,120.1,120.3,120.5],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"brangsta betonas ir metalo konstrukcijos rangos sutartyse",
+      act:{green:"Medžiagų kainos stabilios; fiksuota kaina priimtina.",
+           yellow:"Įtraukti medžiagų dedamosios indeksavimą (betonas, metalo konstrukcijos).",
+           red:"Medžiagų indeksavimas privalomas; svarstyti medžiagų rezervavimą ar ankstesnį pirkimą."}
+    },
+    {
+      id:"sski_mas", group:"D",
+      name:"SSKI: mašinų eksploatacija",
+      plain:"SSKI dedamoji: statybos mašinų ir mechanizmų eksploatacijos darbo valandos kaina.",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:4, red:9},
+      series:[122.0,122.4,122.9,123.4,123.9,124.5,125.1,125.7,126.3,126.9,127.5,128.1,128.7],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"brangsta sunkiosios technikos eksploatacija linijų tiesimo darbuose",
+      act:{green:"Mechanizmų eksploatacijos kaštai stabilūs.",
+           yellow:"Numatyti mašinų ir mechanizmų dedamosios indeksavimą sunkiosios technikos darbams.",
+           red:"Mašinų eksploatacijos indeksavimas privalomas linijų tiesimo rangoje."}
+    },
+    {
+      id:"sski_du", group:"D",
+      name:"SSKI: statybininkų DU",
+      plain:"SSKI dedamoji: statybininkų darbo užmokesčio pokytis. Pastaraisiais metais augo sparčiai.",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:5, red:9},
+      series:[135.0,135.9,136.9,138.0,139.1,140.3,141.5,142.7,143.9,145.1,146.2,147.2,148.2],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"statybininkų darbo užmokestis kyla sparčiai, rangovai reikalauja indeksuoti būtent šią dedamąją",
+      act:{green:"Darbo užmokesčio dedamoji stabili.",
+           yellow:"Numatyti statybininkų DU dedamosios indeksavimą; rangovai dažnai to reikalauja.",
+           red:"Privalomas statybininkų DU dedamosios indeksavimas; tai pagrindinis rangos kainos augimo veiksnys."}
+    },
+    {
+      id:"vki", group:"D",
+      name:"VKI (vartotojų kainos)",
+      plain:"Vartotojų kainų indeksas, pagrindinis infliacijos matas. Paslaugų ir standartinių prekių sutartims.",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:3, red:5},
+      series:[116.0,116.3,116.6,116.9,117.2,117.5,117.8,118.2,118.6,119.0,119.3,119.6,119.9],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"infliacija artėja prie sutartinių kainų peržiūros ribų (pvz., 3 ar 5 proc.) paslaugų sutartyse",
+      act:{green:"Paslaugų sutartyse pakanka standartinės 3-5 proc. peržiūros ribos.",
+           yellow:"Tikrinti, ar vykdomose paslaugų sutartyse pasiekta VKI peržiūros riba (pvz., 3 proc.).",
+           red:"VKI viršija įprastas ribas; aktyvuoti kainų peržiūrą paslaugų ir standartinių prekių sutartyse."}
+    },
+    {
+      id:"gki", group:"D",
+      name:"GKI (gamintojų kainos)",
+      plain:"Pramonės produkcijos gamintojų kainų indeksas. Pramoninės įrangos ir komponentų sutartims.",
+      unit:"indeksas", decimals:1, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:4, red:8},
+      series:[110.0,110.3,110.6,110.9,111.2,111.6,112.0,112.4,112.7,113.0,113.3,113.6,113.85],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"didėja pramoninės įrangos tiekėjų gamybos kaštai (energija, gamyklų išlaikymas)",
+      act:{green:"Pramoninės įrangos gamybos kaštai stabilūs.",
+           yellow:"Įrangos pirkimuose svarstyti GKI indeksavimą vietoj VKI (geriau atspindi gamybos kaštus).",
+           red:"GKI indeksavimas rekomenduojamas pramoninės įrangos ir komponentų sutartyse."}
+    },
+    {
+      id:"vmdu", group:"D",
+      name:"VMDU (IRT sektorius)",
+      plain:"Vidutinis mėnesinis darbo užmokestis (IRT sektorius). Darbo imlioms sutartims.",
+      unit:"€/mėn.", decimals:0, type:"change",
+      invert:false, lookback:12, periodLabel:"per 12 mėn.", thr:{yellow:6, red:11},
+      series:[2650,2666,2682,2700,2718,2737,2757,2778,2800,2822,2848,2875,2902],
+      src:{name:"Valstybės duomenų agentūra (VDA)", url:"https://osp.stat.gov.lt"},
+      impact:"darbo imliose sutartyse standartinis VKI indeksavimas gali nebeatspindėti realių kaštų",
+      act:{green:"DU augimas įprastas; standartinis VKI indeksavimas pakankamas.",
+           yellow:"Darbo imliose sutartyse (projektavimas, priežiūra, IT) svarstyti indeksavimą pagal sektoriaus VMDU.",
+           red:"DU auga sparčiai; darbo imliose sutartyse indeksuoti pagal sektoriaus (IRT ar inžinerinės veiklos) VMDU, ne VKI."}
     }
   ],
   categories:[
@@ -577,7 +679,7 @@ const DEFAULT_DATA = {
       }
     },
     {
-      id:"construction", name:"Statyba–ranga", icon:"🏗️",
+      id:"construction", name:"Statyba-ranga", icon:"🏗️",
       spend:"Aukšta apimtis · jautru degalams ir metalams",
       weights:{ brent:.24, wti:.14, lme_al:.16, lme_cu:.10, polymers:.10, bdi:.16, container:.10 },
       act:{
@@ -635,11 +737,15 @@ function saveData(){
 function metricById(id){ return DATA.metrics.find(m=>m.id===id); }
 
 function latest(m){ return m.series[m.series.length-1]; }
-function base4w(m){ return m.series[Math.max(0,m.series.length-5)]; }
+// bazinė reikšmė pagal rodiklio palyginimo langą (lookback): globalūs - 4 sav., VDA - 12 mėn.
+function baseVal(m){
+  const lb = m.lookback || 4;
+  return m.series[Math.max(0, m.series.length-1-lb)];
+}
 
-// pct pokytis per 4 sav.
+// pct pokytis per palyginimo langą
 function pctChange(m){
-  const b = base4w(m), l = latest(m);
+  const b = baseVal(m), l = latest(m);
   if(b===0) return 0;
   return (l-b)/Math.abs(b)*100;
 }
@@ -681,11 +787,16 @@ function categoryStatus(cat){
   return 0;
 }
 
-// Bendras rinkos klimatas 0..100 (100 = geriausia)
+// Globalūs rodikliai (A/B/C) - jie formuoja rinkos klimatą; D lygmuo (VDA) - atskiras indeksavimo sluoksnis
+function globalMetrics(){ return DATA.metrics.filter(m=>m.group!=="D"); }
+function vdaMetrics(){ return DATA.metrics.filter(m=>m.group==="D"); }
+
+// Bendras rinkos klimatas 0..100 (100 = geriausia), skaičiuojamas iš A/B/C lygmenų
 function climateScore(){
+  const ms = globalMetrics();
   let sum=0;
-  DATA.metrics.forEach(m=> sum += severity(m));
-  const avg = sum / DATA.metrics.length; // 0..2
+  ms.forEach(m=> sum += severity(m));
+  const avg = sum / ms.length; // 0..2
   return Math.round((1 - avg/2) * 100);
 }
 
@@ -732,20 +843,20 @@ function sparkline(m, color){
 const COLORS={green:"#3fb950",yellow:"#e3b341",red:"#f85149"};
 
 /* =========================================================================
-   ATVAIZDAVIMAS — KPI KORTELĖS
+   ATVAIZDAVIMAS - KPI KORTELĖS
    ========================================================================= */
 function trigLabels(m){
   if(m.type==="level"){
     return {
       g:`&lt; ${m.thr.yellow}`,
-      y:`${m.thr.yellow}–${m.thr.red-1}`,
+      y:`${m.thr.yellow}-${m.thr.red-1}`,
       r:`≥ ${m.thr.red}`
     };
   }
   const dir = m.invert ? "kritimas" : "augimas";
   return {
     g:`${dir} &lt; ${m.thr.yellow}%`,
-    y:`${m.thr.yellow}–${m.thr.red}%`,
+    y:`${m.thr.yellow}-${m.thr.red}%`,
     r:`≥ ${m.thr.red}%`
   };
 }
@@ -787,7 +898,7 @@ function kpiCard(m){
       <div class="kpi-val mono">${fmt(l,m.decimals)}<span class="kpi-unit">${m.unit}</span></div>
       <div class="kpi-chg ${chgClass}">
         <span class="big mono">${chgText}</span>
-        <span class="chg-cap">${m.type==="level"?"naujausias lygis":"per 4 sav."}</span>
+        <span class="chg-cap">${m.type==="level"?"naujausias lygis":(m.periodLabel||"per 4 sav.")}</span>
       </div>
     </div>
     ${sparkline(m,color)}
@@ -811,14 +922,14 @@ function kpiCard(m){
 }
 
 function renderGroups(){
-  ["A","B","C"].forEach(g=>{
+  ["A","B","C","D"].forEach(g=>{
     const host = document.getElementById("grid"+g);
     host.innerHTML = DATA.metrics.filter(m=>m.group===g).map(kpiCard).join("");
   });
 }
 
 /* =========================================================================
-   ATVAIZDAVIMAS — KATEGORIJOS
+   ATVAIZDAVIMAS - KATEGORIJOS
    ========================================================================= */
 function topDrivers(cat){
   // rikiuojam pagal weight*severity, imam reikšmingiausius
@@ -857,7 +968,7 @@ function catCard(cat){
     <div class="cat-scale"><span>žalia</span><span>geltona</span><span>raudona</span></div>
     <div class="cat-drivers">Pagrindiniai draiveriai: <b>${driverTxt}</b></div>
     <div class="cat-act">
-      <div class="lab"><span class="sq" style="background:${sqColor}"></span> Sutartiniai veiksmai — ${statusWord(sev).toLowerCase()} režimas</div>
+      <div class="lab"><span class="sq" style="background:${sqColor}"></span> Sutartiniai veiksmai - ${statusWord(sev).toLowerCase()} režimas</div>
       <ul>${acts}</ul>
     </div>
   </div>`;
@@ -868,13 +979,13 @@ function renderCategories(){
 }
 
 /* =========================================================================
-   ATVAIZDAVIMAS — TRIGGERIŲ LENTELĖ
+   ATVAIZDAVIMAS - TRIGGERIŲ LENTELĖ
    ========================================================================= */
 function renderTrigTable(){
   const rows = DATA.metrics.map(m=>{
     const tl = trigLabels(m);
     return `<tr>
-      <td class="metric-cell"><b>${m.name}</b><span>${m.unit} · ${m.type==="level"?"vertinama pagal lygį":"vertinama pagal 4 sav. pokytį"}</span></td>
+      <td class="metric-cell"><b>${m.name}</b><span>${m.unit} · ${m.type==="level"?"vertinama pagal lygį":"vertinama pagal pokytį "+(m.periodLabel||"per 4 sav.")}</span></td>
       <td><span class="zone g">🟢 ${tl.g}</span><br/><span style="display:block;margin-top:6px">${m.act.green}</span></td>
       <td><span class="zone y">🟡 ${tl.y}</span><br/><span style="display:block;margin-top:6px">${m.act.yellow}</span></td>
       <td><span class="zone r">🔴 ${tl.r}</span><br/><span style="display:block;margin-top:6px">${m.act.red}</span></td>
@@ -884,7 +995,7 @@ function renderTrigTable(){
 }
 
 /* =========================================================================
-   ATVAIZDAVIMAS — KLIMATO MATUOKLIS
+   ATVAIZDAVIMAS - KLIMATO MATUOKLIS
    ========================================================================= */
 function renderGauge(){
   const score = climateScore();
@@ -907,10 +1018,10 @@ function renderGauge(){
   numEl.textContent = score;
   numEl.style.color = color;
 
-  const reds = DATA.metrics.filter(m=>severity(m)===2).length;
-  const yellows = DATA.metrics.filter(m=>severity(m)===1).length;
+  const reds = globalMetrics().filter(m=>severity(m)===2).length;
+  const yellows = globalMetrics().filter(m=>severity(m)===1).length;
   let word, desc;
-  if(score>=67){ word="Stabilu"; desc="Rinka rami — veikiame įprastu režimu, stebime."; }
+  if(score>=67){ word="Stabilu"; desc="Rinka rami - veikiame įprastu režimu, stebime."; }
   else if(score>=40){ word="Įtemptai"; desc=`Kyla spaudimas: ${reds} raudona, ${yellows} geltona. Ruošiame sutartines apsaugas.`; }
   else { word="Rizikinga"; desc=`Reikšmingas spaudimas: ${reds} raudona, ${yellows} geltona. Aktyvuojame priemones ir PRR.`; }
   document.getElementById("climateWord").textContent = word;
@@ -923,54 +1034,56 @@ function renderGauge(){
    ========================================================================= */
 function generateSummary(){
   const score = climateScore();
-  const reds = DATA.metrics.filter(m=>severity(m)===2);
-  const yellows = DATA.metrics.filter(m=>severity(m)===1);
-  const greens = DATA.metrics.filter(m=>severity(m)===0);
+  const G = globalMetrics();
+  const V = vdaMetrics();
+  const reds = G.filter(m=>severity(m)===2);
+  const yellows = G.filter(m=>severity(m)===1);
+  const greens = G.filter(m=>severity(m)===0);
 
   // pokyčio aprašas
   function chgPhrase(m){
     if(m.type==="level") return `lygis ${latest(m)} ${m.unit.split("/")[0]}/mėn.`;
     const pc = pctChange(m);
     const dir = pc>0?"augimas":"kritimas";
-    return `${dir} ${fmtSigned(pc,1)}% per 4 sav.`;
+    return `${dir} ${fmtSigned(pc,1)}% ${m.periodLabel||"per 4 sav."}`;
   }
 
-  // P1 — bendra padėtis
+  // P1 - bendra padėtis
   let climatePhrase;
-  if(score>=67) climatePhrase = `Bendras rinkos klimatas — <b>${score}/100, stabilus</b>. Didelių staigmenų nematyti, pirkimus galima vykdyti įprastu režimu.`;
-  else if(score>=40) climatePhrase = `Bendras rinkos klimatas — <b>${score}/100, įtemptas</b>. Keliuose rodikliuose susikaupė spaudimas; rekomenduojama iš anksto įtraukti sutartines apsaugas.`;
-  else climatePhrase = `Bendras rinkos klimatas — <b>${score}/100, rizikingas</b>. Spaudimas plačiai paplitęs; būtina aktyvuoti apsaugines priemones ir atnaujinti PRR.`;
+  if(score>=67) climatePhrase = `Bendras rinkos klimatas - <b>${score}/100, stabilus</b>. Didelių staigmenų nematyti, pirkimus galima vykdyti įprastu režimu.`;
+  else if(score>=40) climatePhrase = `Bendras rinkos klimatas - <b>${score}/100, įtemptas</b>. Keliuose rodikliuose susikaupė spaudimas; rekomenduojama iš anksto įtraukti sutartines apsaugas.`;
+  else climatePhrase = `Bendras rinkos klimatas - <b>${score}/100, rizikingas</b>. Spaudimas plačiai paplitęs; būtina aktyvuoti apsaugines priemones ir atnaujinti PRR.`;
 
-  let p1 = `<p class="ai-lead">${climatePhrase} Iš ${DATA.metrics.length} stebimų rodiklių: `+
+  let p1 = `<p class="ai-lead">${climatePhrase} Iš ${G.length} globalių rinkos rodiklių (A/B/C): `+
     `<span class="pill r">${reds.length} raudona</span> `+
     `<span class="pill y">${yellows.length} geltona</span> `+
     `<span class="pill g">${greens.length} žalia</span>.</p>`;
 
-  // P2 — raudoni
+  // P2 - raudoni
   let p2="";
   if(reds.length){
-    const items = reds.map(m=>`<b>${m.name}</b> (${chgPhrase(m)}) — ${m.impact}`).join("; ");
+    const items = reds.map(m=>`<b>${m.name}</b> (${chgPhrase(m)}) - ${m.impact}`).join("; ");
     p2 = `<p><b>Didžiausi spaudimo taškai.</b> ${items}.</p>`;
   } else {
-    p2 = `<p><b>Didžiausi spaudimo taškai.</b> Šiuo metu nei vienas rodiklis nėra raudonojoje zonoje — kritinių pokyčių nėra.</p>`;
+    p2 = `<p><b>Didžiausi spaudimo taškai.</b> Šiuo metu nei vienas rodiklis nėra raudonojoje zonoje - kritinių pokyčių nėra.</p>`;
   }
 
-  // P3 — geltoni
+  // P3 - geltoni
   let p3="";
   if(yellows.length){
     const items = yellows.map(m=>`<b>${m.name}</b> (${chgPhrase(m)})`).join(", ");
-    p3 = `<p><b>Stebėti atidžiai.</b> ${items} — pokyčiai kol kas valdomi, bet artėja prie ribos. Naujose procedūrose verta iš karto numatyti indeksavimo ir termino apsaugas.</p>`;
+    p3 = `<p><b>Stebėti atidžiai.</b> ${items} - pokyčiai kol kas valdomi, bet artėja prie ribos. Naujose procedūrose verta iš karto numatyti indeksavimo ir termino apsaugas.</p>`;
   }
 
-  // P4 — palanku
+  // P4 - palanku
   let p4="";
   const goodMovers = greens.filter(m=>m.type!=="level" && adverseValue(m) < -0.5);
   if(goodMovers.length){
     const items = goodMovers.map(m=>`<b>${m.name}</b> (${chgPhrase(m)})`).join(", ");
-    p4 = `<p><b>Palanku pirkimams.</b> ${items} — geras momentas fiksuoti kainas ar svarstyti ilgesnės trukmės sutartis šiose srityse.</p>`;
+    p4 = `<p><b>Palanku pirkimams.</b> ${items} - geras momentas fiksuoti kainas ar svarstyti ilgesnės trukmės sutartis šiose srityse.</p>`;
   }
 
-  // P5 — poveikis kategorijoms
+  // P5 - poveikis kategorijoms
   const catRanked = DATA.categories
     .map(c=>({c, sv:categorySeverity(c), st:categoryStatus(c)}))
     .sort((a,b)=>b.sv-a.sv);
@@ -979,7 +1092,7 @@ function generateSummary(){
   let p5 = `<p><b>Poveikis EPSO-G / Litgrid pirkimams.</b> `;
   if(worst.st>=1){
     const drv = topDrivers(worst.c).map(d=>d.m.name).slice(0,2).join(" ir ");
-    p5 += `Labiausiai paveikta kategorija — <b>${worst.c.name}</b> (${statusWord(worst.st).toLowerCase()} režimas), pagrindiniai draiveriai: ${drv}. `;
+    p5 += `Labiausiai paveikta kategorija - <b>${worst.c.name}</b> (${statusWord(worst.st).toLowerCase()} režimas), pagrindiniai draiveriai: ${drv}. `;
   } else {
     p5 += `Visos 5 prioritetinės kategorijos kol kas žaliojoje zonoje. `;
   }
@@ -989,31 +1102,53 @@ function generateSummary(){
   const airUp = severity(metricById("aircargo"))>=1;
   const hormuzBad = severity(metricById("hormuz"))>=1;
   if(energyUp && logiUp){
-    p5 += `Energija ir logistika kyla kartu — didžiausia tikimybė, kad <b>brangs ir vėluos CAPEX</b>: kabeliai, metalo konstrukcijos, statybinės medžiagos, stambi įranga. `;
+    p5 += `Energija ir logistika kyla kartu - didžiausia tikimybė, kad <b>brangs ir vėluos CAPEX</b>: kabeliai, metalo konstrukcijos, statybinės medžiagos, stambi įranga. `;
   }
   if(airUp){
     p5 += `Brangstantys oro kroviniai kelia riziką <b>kritinėms dalims ir avarinėms atsargoms</b> (OPEX/maintenance). `;
   }
   if(hormuzBad){
-    p5 += `Blogėjantys Hormūzo tranzito signalai reiškia <b>ruoštis antrinei kainų bangai</b> per petrochemiją ir draudimo/frachto priemokas — net jei tiesiogiai iš regiono neperkate. `;
+    p5 += `Blogėjantys Hormūzo tranzito signalai reiškia <b>ruoštis antrinei kainų bangai</b> per petrochemiją ir draudimo/frachto priemokas - net jei tiesiogiai iš regiono neperkate. `;
   }
   if(!energyUp && !logiUp && !airUp && !hormuzBad){
-    p5 += `Tiekimo grandinės signalai stabilūs — papildomų priemonių kol kas nereikia. `;
+    p5 += `Tiekimo grandinės signalai stabilūs - papildomų priemonių kol kas nereikia. `;
   }
   p5 += `Rekomendacija: šiuos rodiklius įtraukti į mėnesinį „Rizikų registro“ pildymą kaip PRR.</p>`;
 
-  document.getElementById("aiText").innerHTML = p1+p2+p3+p4+p5;
+  // P6 - LT indeksavimo rodikliai (VDA)
+  const vReds = V.filter(m=>severity(m)===2);
+  const vYellows = V.filter(m=>severity(m)===1);
+  let p6 = `<p><b>LT indeksavimo rodikliai (VDA).</b> `;
+  if(vReds.length){
+    const items = vReds.map(m=>`<b>${m.name}</b> (${chgPhrase(m)})`).join(", ");
+    p6 += `Peržengta raudona riba: ${items}. Šiose srityse indeksavimo sąlyga sutartyse turi būti privaloma, o vykdomose sutartyse reikia patikrinti, ar pasiekta kainų peržiūros riba. `;
+  } else {
+    p6 += `Nei vienas indeksas neperžengė raudonos ribos. `;
+  }
+  if(vYellows.length){
+    const items = vYellows.map(m=>`<b>${m.name}</b> (${chgPhrase(m)})`).join(", ");
+    p6 += `Artėja prie ribos: ${items} - naujose procedūrose verta iš karto numatyti atitinkamą indeksavimo formulę. `;
+  }
+  const duRed = severity(metricById("sski_du"))>=1;
+  const vmduRed = severity(metricById("vmdu"))>=1;
+  if(duRed) p6 += `Statybininkų DU dedamoji auga sparčiausiai - rangovai dažnai reikalauja indeksuoti būtent ją, todėl rangos sutartyse ją reikia įvardyti atskirai. `;
+  if(vmduRed) p6 += `Darbo imliose sutartyse (projektavimas, priežiūra, IT) standartinis VKI gali nebeatspindėti realių kaštų - verta indeksuoti pagal sektoriaus VMDU. `;
+  p6 += `Šie indeksai yra teisinis inkaras: globalūs A/B/C rodikliai pasako „reaguok“, o VDA indeksai - „prie ko indeksuoji“.</p>`;
 
-  // watch list
-  const watch = [...reds.map(m=>({m,s:2})), ...yellows.map(m=>({m,s:1}))]
-    .sort((a,b)=>b.s-a.s).slice(0,5);
+  document.getElementById("aiText").innerHTML = p1+p2+p3+p4+p5+p6;
+
+  // watch list - globalūs + VDA, raudoni ir geltoni
+  const watch = [
+    ...reds.map(m=>({m,s:2})), ...vReds.map(m=>({m,s:2})),
+    ...yellows.map(m=>({m,s:1})), ...vYellows.map(m=>({m,s:1}))
+  ].sort((a,b)=>b.s-a.s).slice(0,6);
   const wl = watch.length ? watch.map(x=>{
     const c = COLORS[statusKey(x.s)];
     return `<div class="watch-item">
       <span class="ic" style="background:${c}"></span>
-      <span><b>${x.m.name}</b> — ${x.m.impact}</span>
+      <span><b>${x.m.name}</b> - ${x.m.impact}</span>
     </div>`;
-  }).join("") : `<div class="watch-item"><span class="ic" style="background:${COLORS.green}"></span><span>Visi rodikliai stabilūs — kritinių stebėjimo objektų nėra.</span></div>`;
+  }).join("") : `<div class="watch-item"><span class="ic" style="background:${COLORS.green}"></span><span>Visi rodikliai stabilūs - kritinių stebėjimo objektų nėra.</span></div>`;
   document.getElementById("watchList").innerHTML = wl;
 
   document.getElementById("updatedWhen").textContent = fmtDate(DATA.meta.updated);
@@ -1029,7 +1164,7 @@ function renderSources(){
   DATA.metrics.forEach(m=>{
     if(!seen[m.src.url]){ seen[m.src.url]=1; links.push(m.src); }
   });
-  links.push({name:"Baltic Dry Index — apžvalga (Wikipedia)", url:"https://en.wikipedia.org/wiki/Baltic_Dry_Index"});
+  links.push({name:"Baltic Dry Index - apžvalga (Wikipedia)", url:"https://en.wikipedia.org/wiki/Baltic_Dry_Index"});
   document.getElementById("srcList").innerHTML =
     "<b style='color:var(--muted)'>Šaltiniai:</b> " +
     links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.name}</a>`).join(" · ");
@@ -1069,7 +1204,7 @@ btnEdit.addEventListener("click", ()=>{
       const m = metricById(inp.dataset.edit);
       const v = parseFloat(inp.value);
       if(!isNaN(v)){
-        // pakeičiame naujausią reikšmę; jei skiriasi reikšmingai — pridedame naują tašką
+        // pakeičiame naujausią reikšmę; jei skiriasi reikšmingai - pridedame naują tašką
         m.series = m.series.slice();
         m.series[m.series.length-1] = v;
       }
