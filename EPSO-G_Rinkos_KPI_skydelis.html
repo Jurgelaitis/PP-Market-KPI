@@ -344,8 +344,8 @@
   <section id="groupD">
     <div class="sec-head">
       <span class="tag">D lygmuo</span>
-      <h2>LT indeksavimo rodikliai (VDA) - prie ko rišamos sutartys</h2>
-      <p>Valstybės duomenų agentūros skelbiami statistiniai indeksai. Tai teisinis inkaras sutarčių kainų peržiūrai Lietuvoje. Vertinamas metinis (12 mėn.) pokytis.</p>
+      <h2>LT indeksavimo rodikliai (VDA)</h2>
+      <p>Valstybės duomenų agentūros skelbiami statistiniai indeksai. Tai teisinis pagrindas sutarčių kainų peržiūrai Lietuvoje. Vertinamas metinis (12 mėn.) pokytis.</p>
     </div>
     <div class="grid g3" id="gridD"></div>
   </section>
@@ -1133,7 +1133,7 @@ function generateSummary(){
   const vmduRed = severity(metricById("vmdu"))>=1;
   if(duRed) p6 += `Statybininkų DU dedamoji auga sparčiausiai - rangovai dažnai reikalauja indeksuoti būtent ją, todėl rangos sutartyse ją reikia įvardyti atskirai. `;
   if(vmduRed) p6 += `Darbo imliose sutartyse (projektavimas, priežiūra, IT) standartinis VKI gali nebeatspindėti realių kaštų - verta indeksuoti pagal sektoriaus VMDU. `;
-  p6 += `Šie indeksai yra teisinis inkaras: globalūs A/B/C rodikliai pasako „reaguok“, o VDA indeksai - „prie ko indeksuoji“.</p>`;
+  p6 += `Šie indeksai yra teisinis pagrindas: globalūs A/B/C rodikliai pasako „reaguok“, o VDA indeksai - „prie ko indeksuoji“.</p>`;
 
   document.getElementById("aiText").innerHTML = p1+p2+p3+p4+p5+p6;
 
