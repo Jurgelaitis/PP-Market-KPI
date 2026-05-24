@@ -355,7 +355,7 @@
     <div class="sec-head">
       <span class="tag">Pritaikymas</span>
       <h2>Pirkimų kategorijų rizikos žemėlapis</h2>
-      <p>Sudėtinis rizikos rodiklis 5 Litgrid prioritetinėms kategorijoms (pagal apimtį / kritiškumą) ir sutartiniai veiksmai pagal režimą.</p>
+      <p>Sudėtinis rizikos rodiklis 6 Litgrid prioritetinėms pirkimų kategorijoms (pagal apimtį ir kritiškumą) ir sutartiniai veiksmai pagal režimą.</p>
     </div>
     <div class="grid g3" id="gridCat"></div>
   </section>
@@ -669,43 +669,53 @@ const DEFAULT_DATA = {
       }
     },
     {
-      id:"transformers", name:"Transformatoriai / pastočių įranga", icon:"⚡",
-      spend:"Aukšta apimtis · ilgi gamybos terminai",
-      weights:{ lme_cu:.26, lme_al:.16, bdi:.14, container:.10, sanctions:.12, hormuz:.10, brent:.06, aircargo:.06 },
+      id:"transformers", name:"Transformatoriai / pastočių įranga (su TSO atsarginėmis dalimis)", icon:"⚡",
+      spend:"Aukšta apimtis · ilgi gamybos terminai · OPEX kritiškumas",
+      weights:{ lme_cu:.20, lme_al:.12, bdi:.12, container:.12, aircargo:.14, sanctions:.12, hormuz:.10, brent:.04, polymers:.04 },
       act:{
-        green:["Standartinės procedūros","Stebėti gamybos terminus rinkoje"],
-        yellow:["Indeksavimo sąlyga (varis/orientacinė elektrotechnika)","Ankstyvas rinkos konsultavimasis dėl gamybos langų","Patvirtinti lead time ir gamybos slotą"],
-        red:["Ankstesnis pirkimo paskelbimas (terminų rizika kritinė)","Preliminarios sutartys; rezervuoti gamybos pajėgumus","Sustiprinta tiekėjų atitikties patikra","Force majeure ir tiekimo garantijos; PRR eskalacija"]
+        green:["Standartinės procedūros naujai įrangai ir atsarginėms dalims","Įprasti gamybos ir pristatymo terminai","Standartinės kritinių dalių saugos atsargos"],
+        yellow:["Indeksavimo sąlyga (varis ir elektrotechnika) naujos įrangos sutartyse","Ankstyvas rinkos konsultavimasis dėl gamybos langų","Peržiūrėti kritinių atsarginių dalių saugos atsargas","Sutartyse numatyti skubaus pristatymo sąlygas"]
+        ,red:["Ankstesnis pirkimo paskelbimas (terminų rizika kritinė)","Preliminarios sutartys; rezervuoti gamybos pajėgumus","Sustiprinta tiekėjų atitikties patikra","Didinti kritinių dalių saugos atsargas; dvigubas tiekimas (dual sourcing)","Force majeure ir tiekimo garantijos; PRR eskalacija"]
       }
     },
     {
-      id:"construction", name:"Statyba-ranga", icon:"🏗️",
-      spend:"Aukšta apimtis · jautru degalams ir metalams",
-      weights:{ brent:.24, wti:.14, lme_al:.16, lme_cu:.10, polymers:.10, bdi:.16, container:.10 },
+      id:"construction", name:"Statyba-ranga ir CAPEX projektai", icon:"🏗️",
+      spend:"Strateginiai projektai (Harmony Link, LitPol Link, Gižai TS, RSVDC) · didžiausi CAPEX biudžetai",
+      weights:{ brent:.18, wti:.10, lme_al:.16, lme_cu:.14, polymers:.08, bdi:.16, container:.12, sanctions:.06 },
       act:{
-        green:["Standartinės procedūros","Fiksuotos kainos priimtinos trumpoms sutartims"],
-        yellow:["Degalų/medžiagų indeksavimo sąlyga ilgesnėms sutartims","Trumpinti pasiūlymų galiojimo terminą","Rangos grafiko buferiai"],
-        red:["Privalomas indeksavimas (degalai + metalai)","Kainos peržiūros mechanizmas; etapinis mokėjimas","Peržiūrėti delspinigius ir terminų riziką","PRR eskalacija dėl sąnaudų augimo"]
+        green:["Standartinės rangos procedūros","Fiksuotos kainos priimtinos trumpoms sutartims","CAPEX grafikai be papildomų rezervų"],
+        yellow:["Degalų ir medžiagų indeksavimo sąlyga ilgesnėms sutartims","Strateginiams projektams (Harmony Link, LitPol Link, Gižai TS, RSVDC) - ankstyvas rinkos konsultavimasis","Rangos grafiko buferiai","Privalomas SSKI dedamųjų indeksavimas (medžiagos, mašinos, DU)"],
+        red:["Privalomas indeksavimas: degalai, metalai, SSKI dedamosios","Strateginiams projektams - aktyvuoti kainos peržiūros mechanizmą; etapinis mokėjimas","Peržiūrėti vykdomų sutarčių delspinigius ir terminų riziką","PRR eskalacija dėl CAPEX biudžeto rizikos"]
       }
     },
     {
-      id:"it_telecom", name:"IT / telekomas", icon:"🖧",
-      spend:"Vidutinė apimtis · jautru atitikčiai ir logistikai",
-      weights:{ sanctions:.26, aircargo:.24, hormuz:.18, polymers:.12, container:.12, lme_cu:.08 },
+      id:"it_software", name:"IT ir programinė įranga (su kibernetiniu saugumu)", icon:"💻",
+      spend:"Vidutinė-aukšta apimtis · jautru atitikčiai ir kibernetiniam saugumui",
+      weights:{ sanctions:.30, aircargo:.22, hormuz:.16, polymers:.10, container:.14, lme_cu:.08 },
       act:{
-        green:["Standartinė tiekėjų patikra","Įprasti pristatymo terminai"],
-        yellow:["Stiprinti komponentų kilmės ir tiekėjų patikrą","Atitikties ir nutraukimo sąlygos sutartyse","Pristatymo termino buferis"],
-        red:["Išplėstinė due diligence; sankcijų sąlyga sutartyje","Alternatyvūs (ES) tiekėjai; didinti kritinių prekių atsargas","Teisė nutraukti be sankcijų; PRR eskalacija"]
+        green:["Standartinė tiekėjų ir komponentų atitikties patikra","Įprasti programinės įrangos licencijavimo terminai"],
+        yellow:["Stiprinti komponentų kilmės ir tiekėjų patikrą (kibernetinis saugumas)","Atitikties ir nutraukimo sąlygos sutartyse","Aparatinės įrangos pristatymo termino buferis"],
+        red:["Išplėstinė due diligence; sankcijų sąlyga sutartyse","Alternatyvūs (ES) tiekėjai kritinei aparatinei įrangai","Teisė nutraukti be sankcijų; sustiprinti kibernetinio saugumo audito reikalavimai","PRR eskalacija"]
       }
     },
     {
-      id:"spares", name:"TSO įrangos atsarginės dalys", icon:"🔧",
-      spend:"Vidutinė apimtis · aukštas kritiškumas (OPEX/maintenance)",
-      weights:{ aircargo:.30, hormuz:.20, sanctions:.18, container:.16, bdi:.10, lme_cu:.06 },
+      id:"services", name:"Specializuotos paslaugos (projektavimas, techninė priežiūra)", icon:"📐",
+      spend:"Augantis biudžetas · darbo imlios sutartys (jautru VMDU)",
+      weights:{ brent:.22, sanctions:.22, aircargo:.14, hormuz:.14, container:.14, polymers:.08, lme_cu:.06 },
       act:{
-        green:["Standartinės atsargos ir pristatymo terminai","Įprastas skubaus pristatymo režimas"],
-        yellow:["Peržiūrėti kritinių dalių saugos atsargas","Sutartyse numatyti skubaus pristatymo sąlygas","Identifikuoti alternatyvius tiekėjus"],
-        red:["Didinti saugos atsargas kritinėms dalims","Rezervuoti logistikos pajėgumus; dvigubas tiekimas","Avarinio tiekimo susitarimai; PRR eskalacija"]
+        green:["Standartinės paslaugų sutartys; VKI peržiūros riba 3-5 proc.","Standartinė užsienio ekspertų atitikties patikra"],
+        yellow:["Sutartyse - VMDU (IRT ar inžinerinė veikla) indeksavimas, ne tik VKI","Užsienio ekspertų atitikties ir sankcijų sąlygos","Komandiruočių ir mobilumo sąnaudų rezervas"],
+        red:["Privalomas sektoriaus VMDU indeksavimas darbo imliose sutartyse","Sustiprinta užsienio ekspertų ir subrangovų patikra","Sutartyse - atitikties ir nutraukimo sąlygos","PRR eskalacija dėl paslaugų sąnaudų augimo"]
+      }
+    },
+    {
+      id:"insurance", name:"Draudimas", icon:"🛡️",
+      spend:"Mažesnė apimtis · jautri geopolitikai ir karo rizikai",
+      weights:{ hormuz:.30, sanctions:.26, brent:.14, bdi:.14, container:.10, wti:.06 },
+      act:{
+        green:["Standartinės draudimo procedūros ir pratęsimai","Įprastos priemokos jūrų ir aviacijos draudimui"],
+        yellow:["Vertinti karo rizikos priemokų augimą jūrų ir aviacijos draudime","Atitikties sąlygos draudimo sutartyse dėl sankcijų","Įvertinti, ar dabartinė draudimo apsauga padengia naujus rizikos scenarijus"],
+        red:["Aktyvuoti draudimo brokerio konsultaciją dėl išplėstos rizikos","Peržiūrėti sutarčių apimtį (karo rizika, kibernetinis saugumas, tiekimo grandinės pertrūkimai)","Įvertinti alternatyvius draudikus; svarstyti dalines savidraudos schemas","PRR eskalacija"]
       }
     }
   ]
@@ -1094,7 +1104,7 @@ function generateSummary(){
     const drv = topDrivers(worst.c).map(d=>d.m.name).slice(0,2).join(" ir ");
     p5 += `Labiausiai paveikta kategorija - <b>${worst.c.name}</b> (${statusWord(worst.st).toLowerCase()} režimas), pagrindiniai draiveriai: ${drv}. `;
   } else {
-    p5 += `Visos 5 prioritetinės kategorijos kol kas žaliojoje zonoje. `;
+    p5 += `Visos 6 prioritetinės kategorijos kol kas žaliojoje zonoje. `;
   }
   // TSO interpretacija
   const energyUp = severity(metricById("brent"))>=1 || severity(metricById("wti"))>=1;
