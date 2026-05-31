@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Rinkos rodiklių stebėjimo skydelis · EPSO-G grupė</title>
 <style>
   :root{
@@ -724,21 +727,39 @@ const DEFAULT_DATA = {
 /* =========================================================================
    BŪSENA
    ========================================================================= */
-const STORE_KEY = "epsog_rinkos_kpi_v1";
+// Pakeitus duomenų struktūrą (rodiklių grupes ar kategorijų rinkinį) reikia padidinti šį numerį,
+// kad senas naršyklės localStorage įrašas būtų automatiškai ignoruojamas.
+const SCHEMA_VERSION = 3;
+const STORE_KEY = "epsog_rinkos_kpi_v" + SCHEMA_VERSION;
+
 let DATA = loadData();
 
 function loadData(){
   try{
+    // Išvalom senus įrašus iš ankstesnių versijų, kad jie neužimtų vietos
+    for(let i=1;i<SCHEMA_VERSION;i++){ localStorage.removeItem("epsog_rinkos_kpi_v"+i); }
     const raw = localStorage.getItem(STORE_KEY);
     if(raw){
       const parsed = JSON.parse(raw);
-      if(parsed && parsed.metrics) return parsed;
+      // Sanity check: turi būti dabartinė struktūra (D lygmuo + 6 kategorijos su naujais id)
+      if(parsed && parsed.metrics && parsed.categories
+         && parsed.schemaVersion === SCHEMA_VERSION
+         && parsed.metrics.some(m=>m.group==="D")
+         && parsed.categories.length === 6
+         && parsed.categories.some(c=>c.id==="insurance")){
+        return parsed;
+      }
     }
   }catch(e){}
-  return JSON.parse(JSON.stringify(DEFAULT_DATA));
+  const fresh = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  fresh.schemaVersion = SCHEMA_VERSION;
+  return fresh;
 }
 function saveData(){
-  try{ localStorage.setItem(STORE_KEY, JSON.stringify(DATA)); }catch(e){}
+  try{
+    DATA.schemaVersion = SCHEMA_VERSION;
+    localStorage.setItem(STORE_KEY, JSON.stringify(DATA));
+  }catch(e){}
 }
 
 /* =========================================================================
